@@ -1,0 +1,126 @@
+/* custom_styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+    font-size: 16px;
+    /* UPDATED: Colors adjusted for a dark theme */
+    --primary-brand-color: #82aaff;      /* Lighter, vibrant blue for titles */
+    --secondary-brand-color: #28a745;     /* Kept green for "success" buttons */
+    --accent-color-light: #4A90E2;
+    --card-background: rgba(15, 23, 42, 0.85); /* Dark, semi-transparent blue for cards */
+    --text-color-dark: #E2E8F0;           /* Main text - light gray/white */
+    --text-color-medium: #94A3B8;         /* Secondary text - medium gray */
+    --text-color-light: #64748B;
+    --border-color-default: #334155;      /* Darker border color */
+    --shadow-light: rgba(0,0,0,0.2);
+    --shadow-medium: rgba(0,0,0,0.4);
+    --shadow-strong: rgba(0,0,0,0.6);
+    --success-bg: #166534;                /* Dark green background */
+    --success-text: #dcfce7;
+    --info-bg: #1e40af;
+    --info-text: #dbeafe;
+    --error-bg: #991b1b;
+    --error-text: #fee2e2;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color-dark); /* Default text color is now light */
+}
+
+/* Main content container with a dark, semi-transparent background */
+div[data-testid="stVerticalBlock"] > div.block-container {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color-default);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem var(--shadow-strong);
+    padding: 2.5rem 3.5rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+/* Typography with light text colors */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary-brand-color);
+}
+h1 { text-align: center; font-size: 3.2rem; margin-bottom: 0.8rem; }
+h2 { font-size: 2.2rem; border-bottom-color: var(--border-color-default); padding-bottom: 0.6rem; margin-top: 2.5rem; margin-bottom: 1.5rem; text-align: center; }
+h3 { font-size: 1.6rem; margin-top: 1rem; margin-bottom: 1.5rem; border-left: 4px solid var(--secondary-brand-color); padding-left: 1rem; font-weight: 500; color: var(--text-color-dark); }
+.stMarkdown p { font-size: 1.1rem; line-height: 1.7; color: var(--text-color-medium); }
+p.intro-text { text-align: center; font-size: 1.15rem; color: var(--text-color-dark); }
+
+/* Widgets adapted for a dark theme */
+.stButton > button { background-color: var(--secondary-brand-color); color: white; border-radius: 0.5rem; border: none; padding: 0.8rem 1.5rem; font-size: 1.1rem; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 0.2rem 0.5rem var(--shadow-medium); }
+.stButton > button:hover { background-color: #218838; transform: translateY(-2px); box-shadow: 0 0.4rem 0.8rem var(--shadow-strong); }
+.stDownloadButton > button { background-color: var(--accent-color-light); }
+.stDownloadButton > button:hover { background-color: #3a7bd5; }
+.stSlider label, .stSelectbox label, .stNumberInput label, .stTextInput label { font-size: 1rem; font-weight: 500; color: var(--text-color-dark); }
+
+/* Dropdown (Selectbox) and Inputs Fix for dark theme */
+div[data-testid="stSelectbox"] div[data-baseweb="select"],
+div[data-testid="stTextInput"] input,
+div[data-testid="stNumberInput"] input {
+    border: 1px solid var(--border-color-default);
+    background-color: #0f172a; /* Dark input background */
+    color: var(--text-color-dark);
+    border-radius: 0.5rem;
+}
+div[data-testid="stSelectbox"] div[data-baseweb="select"] div { color: var(--text-color-dark); }
+div[data-testid="stSelectbox"] svg { fill: var(--text-color-dark); }
+
+
+/* --- UX Fixes for Dropdowns --- */
+div[data-testid="stSelectbox"] {
+    cursor: pointer;
+}
+div[data-testid="stSelectbox"] input {
+    caret-color: transparent;
+}
+
+
+/* Prediction Result & Footer for dark theme */
+.prediction-result { border-left: 10px solid var(--secondary-brand-color); background-color: var(--success-bg); color: var(--success-text); padding: 1.8rem 2rem; margin-top: 2rem; border-radius: 1rem; font-size: 1.8rem; font-weight: 700; text-align: center; box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.15); animation: fadeInScale 0.6s ease-out; }
+.footer { background-color: var(--card-background); border-top: 1px solid var(--border-color-default); color: var(--primary-brand-color); padding: 1rem 2rem; border-radius: 0.8rem; text-align: center; font-weight: 500; font-size: 1.05rem; margin-top: 2rem; }
+@keyframes fadeInScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+header[data-testid="stHeader"] { background-color: transparent; }
+header[data-testid="stHeader"] button, header[data-testid="stHeader"] svg { color: white !important; fill: white !important; }
+div[data-testid="stDecoration"] { display: none !important; }
+
+@media (max-width: 768px) {
+    div[data-testid="stHorizontalBlock"] { flex-direction: column; }
+}
+
+/* --- NEW: Sidebar Navigation Styling --- */
+div[data-testid="stSidebarUserContent"] {
+    padding-top: 1rem;
+}
+/* Styling the 'Navigation' title */
+div[data-testid="stSidebarUserContent"] .st-emotion-cache-1j0f588 {
+    font-size: 1.5rem;
+    color: var(--primary-brand-color);
+}
+/* Styling the 'Go to' label for the radio buttons */
+div[data-testid="stRadio"] > label {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    color: var(--text-color-dark) !important;
+    padding-bottom: 1rem;
+}
+/* Styling for each radio button option */
+div[data-testid="stRadio"] div[role="radiogroup"] > label {
+    background-color: rgba(45, 55, 72, 0.5);
+    border: 1px solid var(--border-color-default);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+/* Hover effect for radio buttons */
+div[data-testid="stRadio"] div[role="radiogroup"] > label:hover {
+    background-color: rgba(55, 65, 82, 0.8);
+    border-color: var(--primary-brand-color);
+}
