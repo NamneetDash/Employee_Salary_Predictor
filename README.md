@@ -93,8 +93,8 @@ Clone the repository:
 
 Bash
 
-git clone https://github.com/code2104-sys/Employee-Salary-Predictor.git
-cd Employee-Salary-Predictor
+git clone [https://github.com/code2104-sys/Employee_Salary_Predictor.git]
+cd Employee_Salary_Predictor
 Install the required libraries:
 Ensure you have at least 4 GB of RAM and 500 MB of free storage space.
 
