@@ -45,9 +45,8 @@ The data was split into 80% for training and 20% for testing.
 
 Five different classification models were trained and evaluated: Logistic Regression, Random Forest, K-Nearest Neighbors (KNN), Support Vector Machine (SVM), and Gradient Boosting Classifier.
 
-A 
 
-Pipeline was used for each model to include StandardScaler for feature scaling.
+A Pipeline was used for each model to include StandardScaler for feature scaling.
 
 Model Selection & Deployment:
 
