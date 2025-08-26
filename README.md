@@ -1,4 +1,5 @@
 Employee Salary Prediction
+
 This project, part of the IBM SkillsBuild program, is a complete data science pipeline for predicting employee salaries. It uses various classification algorithms to determine if an individual's income is above or below $50,000 based on demographic and employment data. The project encompasses everything from data cleaning and preprocessing to model training, evaluation, and deployment as an interactive web application.
 
 
